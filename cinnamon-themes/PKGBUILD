@@ -1,0 +1,17 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=cinnamon-themes
+pkgver=2013.11.25
+pkgrel=1
+pkgdesc="Cinnamon themes"
+license=('GPLv3')
+arch=(any)
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/c/cinnamon-themes/cinnamon-themes_${pkgver}.tar.gz)
+md5sums=('63cc9463265acf058899e8d0a627e309')
+
+package() {
+    cd "$srcdir/${pkgname}"
+    cp -R "usr" "$pkgdir"    
+}
+

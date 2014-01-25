@@ -1,0 +1,18 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-themes-gtk3
+pkgver=3.8
+pkgrel=1
+pkgdesc="Mint themes for GTK3"
+license=('GPLv3')
+arch=(any)
+#depends=(mint-x-icons mint-themes-gtk3)
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/mint-themes-gtk3/mint-themes-gtk3_${pkgver}-9.tar.gz)
+md5sums=('9fdeb893b6282cf1594661daf949e717')
+
+package() {
+    cd "$srcdir/${pkgname}"
+    cp -R "usr" "$pkgdir"    
+}
+

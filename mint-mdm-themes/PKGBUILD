@@ -1,0 +1,18 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-mdm-themes
+pkgver=1.1.2
+pkgrel=1
+pkgdesc="Default artwork for the Cinnamon edition of Linux Mint"
+license=('GPLv3')
+arch=(any)
+depends=("mdm-display-manager")
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/mint-mdm-themes/mint-mdm-themes_${pkgver}.tar.gz)
+md5sums=('7b764f86e4d09632b8edce3d474d25ee')
+
+package() {
+    cd "$srcdir/${pkgname}-${pkgver}"
+    cp -R "usr" "$pkgdir"    
+}
+

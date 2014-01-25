@@ -1,0 +1,18 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-themes
+pkgver=1.2.8
+pkgrel=1
+pkgdesc="Mint themes"
+license=('GPLv3')
+arch=(any)
+depends=(mint-x-icons mint-themes-gtk3)
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/mint-themes/mint-themes_${pkgver}.tar.gz)
+md5sums=('b60e4679a10b26921e926083b4fd3265')
+
+package() {
+    cd "$srcdir/${pkgname}"
+    cp -R "usr" "$pkgdir"    
+}
+

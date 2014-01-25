@@ -1,0 +1,17 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-artwork-cinnamon
+pkgver=4.2
+pkgrel=1
+pkgdesc="Default artwork for the Cinnamon edition of Linux Mint"
+license=('GPLv3')
+arch=(any)
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/mint-artwork-cinnamon/mint-artwork-cinnamon_${pkgver}.tar.gz)
+md5sums=('c279fa7b355285f488dff2d5edbe45a1')
+
+package() {
+    cd "$srcdir/mint-artwork-cinnamon-${pkgver}"
+    cp -R "usr" "$pkgdir"    
+}
+

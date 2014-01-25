@@ -1,0 +1,18 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-common
+pkgver=1.1.1
+pkgrel=1
+pkgdesc="Common scripts and resources for Linux Mint"
+license=('GPLv3')
+arch=(any)
+#depends=(mint-x-icons mint-themes-gtk3)
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/mint-common/mint-common_${pkgver}.tar.gz)
+md5sums=('5a99f63c257de8006270cf96935e1c99')
+
+package() {
+    cd "$srcdir/${pkgname}"
+    cp -R "usr" "$pkgdir"    
+}
+

@@ -1,0 +1,18 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-artwork-common
+pkgver=1.7.3
+pkgrel=1
+pkgdesc="Common artwork for Linux Mint editions"
+license=('GPLv3')
+arch=(any)
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/mint-artwork-common/mint-artwork-common_${pkgver}.tar.gz)
+md5sums=('981071c69e2112b700ddfafb865c08dc')
+
+package() {
+    cd "$srcdir/mint-artwork-common"
+    #cp -R "etc" "$pkgdir"
+    cp -R "usr" "$pkgdir"    
+}
+

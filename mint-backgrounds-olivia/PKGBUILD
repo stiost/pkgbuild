@@ -1,0 +1,18 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-backgrounds-olivia
+pkgver=1.4
+pkgrel=1
+pkgdesc="The desktop backgrounds for Linux Mint 15 Olivia"
+license=('GPLv3')
+arch=(any)
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/${pkgname}/${pkgname}_${pkgver}.tar.gz)
+md5sums=('0172765e37d26caec22a5f663568bd5a')
+
+package() {
+    cd "$srcdir/${pkgname}"
+    cp -R "usr" "$pkgdir"
+    chmod 644 $pkgdir/usr/share/backgrounds/linuxmint-olivia/*.png
+}
+

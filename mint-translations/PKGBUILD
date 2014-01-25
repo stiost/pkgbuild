@@ -1,0 +1,18 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-translations
+pkgver=2013.11.26
+pkgrel=1
+pkgdesc="Translation files for Linux Mint"
+license=('GPLv3')
+arch=(any)
+options=(!strip)
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/${pkgname}/${pkgname}_${pkgver}.tar.gz)
+md5sums=('ec7657f8ef9d55ae69a1a632b39e248b')
+
+package() {
+    cd "$srcdir/${pkgname}-${pkgver}"
+    cp -R "usr" "$pkgdir"
+}
+

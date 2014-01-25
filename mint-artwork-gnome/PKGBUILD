@@ -1,0 +1,19 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-artwork-gnome
+pkgver=2.6.32
+pkgrel=1
+pkgdesc="Default artwork for Linux Mint"
+license=('GPLv3')
+arch=(any)
+depends=('mint-backgrounds-petra') # Depends: mint-artwork-common, gtk2-engines, gtk2-engines-murrine, gtk2-engines-pixbuf, mint-x-icons, mint-themes, mint-backgrounds-petra
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/mint-artwork-gnome/mint-artwork-gnome_${pkgver}.tar.gz)
+md5sums=('e17dfb705a13d2eec86915c21b0eb1c7')
+
+package() {
+    cd "$srcdir/mint-artwork-gnome"
+    #cp -R "etc" "$pkgdir"
+    cp -R "usr" "$pkgdir"    
+}
+

@@ -1,0 +1,18 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-backgrounds-petra
+pkgver=1.4
+pkgrel=1
+pkgdesc="The desktop backgrounds for Linux Mint 16 Petra"
+license=('GPLv3')
+arch=(any)
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/${pkgname}/${pkgname}_${pkgver}.tar.gz)
+md5sums=('8ce4ba86a063c4d9dd7a3e15328b99d7')
+
+package() {
+    cd "$srcdir/${pkgname}"
+    cp -R "usr" "$pkgdir"
+    chmod 644 $pkgdir/usr/share/backgrounds/linuxmint-petra/*
+}
+

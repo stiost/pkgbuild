@@ -1,0 +1,18 @@
+# Maintainer: Stian Østerhaug <stian.osterhaug@gmail.com>
+
+pkgname=mint-x-icons
+pkgver=1.1.6
+pkgrel=1
+pkgdesc="Mint themes for GTK3"
+license=('GPLv3')
+arch=(any)
+#depends=(mint-x-icons mint-themes-gtk3)
+url=http://www.linuxmint.com/
+source=(http://packages.linuxmint.com/pool/main/m/mint-x-icons/mint-x-icons_${pkgver}.tar.gz)
+md5sums=('6e4ee5a498d9d0e87c6548da95e3d646')
+
+package() {
+    cd "$srcdir/${pkgname}"
+    cp -R "usr" "$pkgdir"    
+}
+
