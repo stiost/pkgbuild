@@ -1,6 +1,7 @@
 *.xz
 *.swp
 *.gz
+*.bz2
 pkg
 src
 
