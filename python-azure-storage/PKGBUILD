@@ -1,0 +1,46 @@
+# Maintainer: Stian Østerhaug <stian dot osterhaug at gmail dot com>
+
+pkgbase=python-azure-storage
+pkgname=(python-azure-storage python2-azure-storage)
+pkgver=0.20.0
+pkgrel=1
+pkgdesc="Microsoft Azure Storage Client Library for Python"
+arch=('any')
+url="https://pypi.python.org/pypi/azure-storage"
+license=('Apache')
+makedepends=('python-setuptools' 'python2-setuptools')
+source=("https://pypi.python.org/packages/source/a/azure-storage/azure-storage-${pkgver}.zip")
+sha256sums=('7e78e7e812c9dd3573b01cae33ded5ddb6e47bef89afd4ec0f73b8650914c532')
+
+prepare() {
+  cp -a azure-storage-$pkgver azure-storage-python2-$pkgver
+}
+
+build() {
+  cd azure-storage-$pkgver
+  python setup.py build
+
+  cd ../azure-storage-python2-$pkgver
+  python2 setup.py build
+}
+
+# package for python 3
+package_python-azure-storage() {
+  depends=('python')
+  pkgdesc+=" 3"
+
+  cd azure-storage-$pkgver
+
+  python setup.py install --root="$pkgdir/" --optimize=1
+}
+
+# package for python 2
+package_python2-azure-storage() {
+  depends=('python2')
+  pkgdesc+=" 2"
+
+  cd azure-storage-python2-$pkgver
+
+  python2 setup.py install --root="$pkgdir/" --optimize=1
+}
+
