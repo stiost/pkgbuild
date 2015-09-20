@@ -1,0 +1,24 @@
+pkgname=python2-lmdb
+pkgver=0.87
+pkgrel=2
+pkgdesc="Universal Python binding for the LMDB 'Lightning' Database"
+arch=(any)
+url=""
+license=('BSD')
+groups=()
+depends=('python2')
+makedepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=(!emptydirs)
+install=
+source=("https://pypi.python.org/packages/source/l/lmdb/lmdb-${pkgver}.tar.gz")
+md5sums=('5f0dbdeca7e85d34a49c26372049d68b')
+
+package() {
+  cd "$srcdir/lmdb-$pkgver"
+  python2 setup.py install --root="$pkgdir/" --optimize=1
+}
+
